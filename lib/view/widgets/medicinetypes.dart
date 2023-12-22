@@ -60,9 +60,6 @@ class MedicineTypes extends StatelessWidget {
                         colorBlendMode: BlendMode.srcOver,
                       ),
                       Text(
-                      // controller.language=="en"?
-                      //   controller.categories[index]['name_EN']
-                      //   :
                       controller.categories[index]['name']
                         ,style: TextStyles.medicineType,
                       )
@@ -73,15 +70,3 @@ class MedicineTypes extends StatelessWidget {
     );
   }
 }
-
-// Positioned(
-                //   top: -5,
-                //   right: getLanguage() == "ar" ? -10 : 80,
-                //   child: Container(
-                //       width: 50,
-                //       height: 50,
-                //       child: Image.asset(
-                //         "${medicineTypesModele[index].image}",
-                //         fit: BoxFit.fill,
-                //       )),
-                // )

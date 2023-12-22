@@ -51,15 +51,12 @@ class HomePageControllerImp extends HomePageController {
       categoryStatusRequest = hadelingData(response2);
       if (StatusRequest.success == categoryStatusRequest) {
         if (response2['status'] == "success") {
-          print("true");
           categories.addAll(response2['categories']);
         } else {
           print("error");
         }
       }
-      print(response2['status']);
     }
-
     statusRequest = hadelingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
@@ -69,7 +66,6 @@ class HomePageControllerImp extends HomePageController {
         }
         medicines.addAll(response['medicines']);
       } else {
-        print("error");
       }
     }
     update();
@@ -155,13 +151,11 @@ class HomePageControllerImp extends HomePageController {
 
   @override
   void onInit() {
-    //language = "en";
     language = getLanguage();
     displayData();
     update();
     scrollController = ScrollController();
     scrollController.addListener(scrollListener);
-
     super.onInit();
   }
 
@@ -173,7 +167,6 @@ class HomePageControllerImp extends HomePageController {
     isData = true;
     categories.clear();
     displayData();
-    print(medicines.length);
   }
 
   Future<void> scrollListener() async {

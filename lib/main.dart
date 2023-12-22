@@ -9,7 +9,6 @@ import 'package:pharmadicum/core/services/services.dart';
 import 'package:pharmadicum/view/screens/auth/login.dart';
 import 'package:pharmadicum/view/screens/auth/signup.dart';
 import 'package:pharmadicum/view/screens/buttombar.dart';
-import 'package:pharmadicum/view/screens/changepassword.dart';
 import 'package:pharmadicum/view/screens/changethelanguage.dart';
 import 'package:pharmadicum/view/screens/chooselanguage.dart';
 import 'package:pharmadicum/view/screens/favourite.dart';
@@ -19,7 +18,6 @@ import 'view/screens/onboarding.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialServices();
-  //getLanguage();
   runApp(const MyApp());
 }
 
@@ -63,7 +61,6 @@ class MyApp extends StatelessWidget {
         ),
       )),
       debugShowCheckedModeBanner: false,
-      //initialBinding: InitialBinding(),
       getPages: [
          GetPage(
             name: "/",
@@ -76,7 +73,6 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/Search", page: () => Search()),
         GetPage(name: "/Favourite", page: () => Favourite()),
         GetPage(name: "/ChangeTheLanguage", page: () => ChangeTheLanguage()),
-        GetPage(name: "/ChangePassword", page: () => ChangePassword()),
                 GetPage(name: "/ChooseLanguage", page: () => ChooseLanguage()),
 
       ],

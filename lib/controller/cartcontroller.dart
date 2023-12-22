@@ -37,7 +37,6 @@ class CartControllerImp extends CartController {
     update();
     var token = myServices.sharedPreferences.getString("token");
     var response = await cartback.postData(token, totalPrice.toString(), items);
-    print(response);
     statusRequest = hadelingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
@@ -46,7 +45,6 @@ class CartControllerImp extends CartController {
         print(response['status']);
       }
     } else {
-      print("errorrrr");
     }
     Get.back();
 

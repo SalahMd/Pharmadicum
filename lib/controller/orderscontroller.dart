@@ -6,20 +6,14 @@ import 'package:pharmadicum/core/services/services.dart';
 import 'package:pharmadicum/data/remote/orderBack.dart';
 
 abstract class OrdersController extends GetxController {
- // deleteOrder(int index);
   displayOrders();
 }
 
 class OrdersControllerImp extends OrdersController {
   Myservices myServices = Get.find();
   StatusRequest? statusRequest;
-  OrderBack orderBack = new OrderBack(Get.put(Crud()));
+  OrderBack orderBack =  OrderBack(Get.put(Crud()));
   List orders = [];
-  @override
-  // deleteOrder(int index) {
-  //   orderModel.removeAt(index);
-  //   update();
-  // }
 
   @override
   displayOrders() async {
@@ -27,8 +21,6 @@ class OrdersControllerImp extends OrdersController {
     update();
     var token = myServices.sharedPreferences.getString("token");
     var response = await orderBack.postData(token);
-    print(response);
-
     statusRequest = hadelingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
@@ -37,10 +29,10 @@ class OrdersControllerImp extends OrdersController {
         print("error");
       }
     }
-    //print(response);
     update();
   }
 
+  @override
   onInit() {
     displayOrders();
     super.onInit();

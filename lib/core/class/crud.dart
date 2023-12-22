@@ -11,7 +11,6 @@ class Crud {
   ) async {
     try {
       var response;
-      if (true) {
         if (isPost) {
           response = await http.post(Uri.parse(linkurl), body: data);
         } else {
@@ -25,9 +24,7 @@ class Crud {
         } else {
           return left(StatusRequest.serverError);
         }
-      } else {
-        return left(StatusRequest.offline);
-      }
+      
     } catch (_) {
       return left(StatusRequest.serverError);
     }
@@ -37,21 +34,17 @@ class Crud {
       Map<String, String> headers, bool isPost) async {
     try {
       var response;
-      if (true) {
-        if (isPost)
+        if (isPost) {
           response = await http.post(Uri.parse(linkurl),
               body: jsonEncode(data), headers: headers);
-        else
+        } else {
           response = await http.get(Uri.parse(linkurl), headers: headers);
+        }
         if (response.statusCode == 200 || response.statusCode == 201) {
           Map responseBody = jsonDecode(response.body);
           return right(responseBody);
         } else {
-          print(response.statusCode);
           return left(StatusRequest.serverError);
-        }
-      } else {
-        return left(StatusRequest.offline);
       }
     } catch (_) {
       return left(StatusRequest.serverError);

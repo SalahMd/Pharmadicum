@@ -17,9 +17,6 @@ class Medicine extends StatelessWidget {
   final bool favourite = false;
   final Future Function()? ontapicon;
 
-  //final int index;
-  //final Uint8List bytes = base64.decoder();
-
   final String price;
   final void Function()? onPressed;
   const Medicine({

@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
-import 'package:pharmadicum/controller/cartcontroller.dart';
-import 'package:pharmadicum/controller/homepagecontroller.dart';
-import 'package:pharmadicum/controller/itemcontroller.dart';
-import 'package:pharmadicum/controller/topbarcontroller.dart';
 import 'package:pharmadicum/core/constants/colors.dart';
 import 'package:pharmadicum/core/constants/dimenesions.dart';
-import 'package:pharmadicum/core/functions/checkBadge.dart';
 import 'package:pharmadicum/core/functions/getlanguage.dart';
 import 'package:pharmadicum/data/datasource/static.dart';
 

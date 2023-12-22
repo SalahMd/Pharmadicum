@@ -46,7 +46,6 @@ showPassword() {
           passwordController.text);
       statusRequest = hadelingData(response);
       if (StatusRequest.success == statusRequest) {
-        print("yess");
         if (response['status'] == "success") {
           Get.offNamed("Login");
         } else
@@ -59,11 +58,11 @@ showPassword() {
 
   @override
   void onInit() {
-    phoneController = new TextEditingController();
-    pharmaciestNameController = new TextEditingController();
-    pharmacyNameController = new TextEditingController();
-    passwordController = new TextEditingController();
-    confirmPasswordController = new TextEditingController();
+    phoneController =  TextEditingController();
+    pharmaciestNameController =  TextEditingController();
+    pharmacyNameController =  TextEditingController();
+    passwordController =  TextEditingController();
+    confirmPasswordController =  TextEditingController();
     super.onInit();
   }
 

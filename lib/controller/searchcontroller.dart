@@ -38,7 +38,6 @@ class SearchControllerImp extends SearchController {
       if (response['status'] == "success") {
         data.addAll(response['medicines']);
         update();
-        print(response['data']);
       }
     }
   }

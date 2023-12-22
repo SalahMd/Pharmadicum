@@ -50,13 +50,9 @@ class LogInControllerImp extends LogiInController {
           phoneController.text, passwordController.text);
       statusRequest = hadelingData(response);
       if (StatusRequest.success == statusRequest) {
-        print("login");
-        print(response);
         if (response['status'] == "success") {
           if (response['user']['role_id'] == 2) {
-            // data.addAll(response['data']);
             myServices.sharedPreferences.setInt("id", response['user']["id"]);
-
             myServices.sharedPreferences
                 .setString("name", response['user']['name']);
             myServices.sharedPreferences
@@ -76,8 +72,7 @@ class LogInControllerImp extends LogiInController {
           update();
         }
       } else {
-        //wrongLogin();
-        //update();
+        
       }
       update();
     } else
@@ -97,7 +92,6 @@ class LogInControllerImp extends LogiInController {
 
   void onInit() {
     language = getLanguage();
-    print(language);
     update();
     phoneController = new TextEditingController();
     passwordController = new TextEditingController();

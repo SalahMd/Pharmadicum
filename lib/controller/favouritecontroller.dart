@@ -35,7 +35,6 @@ class FavouriteControllerImp extends FavouriteController {
       }
     } else
       print("Error");
-    print(favourite.length);
     update();
   }
 

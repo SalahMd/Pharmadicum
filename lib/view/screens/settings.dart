@@ -83,18 +83,7 @@ class Settings extends StatelessWidget {
                                 trailingIcon: Icon(Icons.arrow_forward),
                                 listText: "myorders".tr),
                           ),
-                          InkWell(
-                            onTap: () {
-                              Get.toNamed("ChangePassword");
-                            },
-                            child: ListTiles(
-                                leadingIcon: Icon(
-                                  Icons.lock_outlined,
-                                  color: Colorss.whiteColor,
-                                ),
-                                trailingIcon: Icon(Icons.arrow_forward),
-                                listText: "changepassword".tr),
-                          ),
+                         
                           InkWell(
                             onTap: () {
                               Get.toNamed("ChangeTheLanguage");

@@ -76,12 +76,6 @@ class ItemControllerImp extends ItemController {
         print("error");
       }
     }
-    print(response);
     update();
   }
-
-  // @override
-  // void refresh() {
-  //   update();
-  // }
 }
