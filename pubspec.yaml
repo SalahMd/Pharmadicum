@@ -1,0 +1,48 @@
+name: pharmadicum
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.1 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  get: ^4.6.6
+  jiffy: ^6.2.1
+  intl: ^0.18.1
+  http: ^1.1.0
+  show_up_animation: ^2.0.0
+  auto_animated: ^3.2.0
+  shared_preferences: ^2.2.1
+  path: ^1.8.3
+  dropdown_search: ^5.0.6
+  dartz: ^0.10.1
+  lottie: ^2.6.0
+  flutter_animate: ^4.2.0
+  curved_navigation_bar: ^1.0.3
+  badges: ^3.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/
+    - animations/
+
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: fonts/Cairo_Bold.ttf
+          weight: 700
+    - family: Trajan Pro
+      fonts:
+        - asset: fonts/PlayfairDisplay-Bold.ttf
+        - asset: fonts/PlayfairDisplay-Regular.ttf
+          weight: 700
