@@ -6,23 +6,22 @@ import 'package:pharmadicum/data/datasource/static.dart';
 abstract class OnBoardingController extends GetxController {
   next();
   onPageChanged(int index);
-
 }
 
 class OnBoardingControllerImp extends OnBoardingController {
-
   int currentPage = 0;
   late PageController pageController;
   Myservices multiService = Get.find();
   @override
   next() {
     currentPage++;
-    if (currentPage > Onbordingmodel.length - 1) {
+    if (currentPage > onbordingmodel.length - 1) {
       multiService.sharedPreferences.setString("step", "1");
       Get.offAllNamed("Login");
-    } else
+    } else {
       pageController.animateToPage(currentPage,
-          duration: Duration(milliseconds: 700), curve: Curves.easeInOut);
+          duration: const Duration(milliseconds: 700), curve: Curves.easeInOut);
+    }
   }
 
   @override
@@ -35,6 +34,4 @@ class OnBoardingControllerImp extends OnBoardingController {
     pageController = PageController();
     super.onInit();
   }
-
- 
 }

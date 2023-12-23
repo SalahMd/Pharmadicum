@@ -8,7 +8,6 @@ import 'package:pharmadicum/core/constants/dimenesions.dart';
 import 'package:pharmadicum/core/constants/textstyles.dart';
 import 'package:pharmadicum/core/functions/getlanguage.dart';
 import 'package:pharmadicum/data/datasource/static.dart';
-import 'package:pharmadicum/view/screens/homepage.dart';
 import 'package:pharmadicum/view/widgets/topbar.dart';
 
 // ignore: must_be_immutable

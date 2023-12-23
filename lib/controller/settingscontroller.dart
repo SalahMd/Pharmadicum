@@ -14,7 +14,7 @@ abstract class SettingController extends GetxController {
 class SettingControllerImp extends SettingController {
   Myservices myServices = Get.find();
   StatusRequest? statusRequest;
-  LogOutBack log_Out = new LogOutBack(Get.put(Crud()));
+  LogOutBack log_Out = LogOutBack(Get.put(Crud()));
 
   @override
   goToFavourite() {}

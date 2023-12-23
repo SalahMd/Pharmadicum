@@ -21,7 +21,7 @@ class OnBoarding extends GetView<OnBoardingControllerImp> {
               onPageChanged: (val) {
                 controller.onPageChanged(val);
               },
-              itemCount: Onbordingmodel.length,
+              itemCount: onbordingmodel.length,
               itemBuilder: (context, int i) => Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -29,7 +29,7 @@ class OnBoarding extends GetView<OnBoardingControllerImp> {
                       Expanded(
                         flex: 1,
                         child: Text(
-                          Onbordingmodel[i].title!,
+                          onbordingmodel[i].title!,
                           style: Theme.of(context).textTheme.headline1,
                         ),
                       ),
@@ -39,7 +39,7 @@ class OnBoarding extends GetView<OnBoardingControllerImp> {
                         child: Container(
                             // width: 300,
                             // height: 230,
-                            child: Onbordingmodel[i].animation),
+                            child: onbordingmodel[i].animation),
                       ),
 
                       Expanded(
@@ -48,7 +48,7 @@ class OnBoarding extends GetView<OnBoardingControllerImp> {
                             width: double.infinity,
                             alignment: Alignment.center,
                             child: Text(
-                              Onbordingmodel[i].body!,
+                              onbordingmodel[i].body!,
                               textAlign: TextAlign.center,
                               style: Theme.of(context).textTheme.bodyText1,
                             )),
@@ -65,7 +65,7 @@ class OnBoarding extends GetView<OnBoardingControllerImp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ...List.generate(
-                          Onbordingmodel.length,
+                          onbordingmodel.length,
                           (index) => AnimatedContainer(
                                 duration: const Duration(milliseconds: 700),
                                 width: controller.currentPage == index ? 20 : 8,

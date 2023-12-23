@@ -17,13 +17,13 @@ class SignUpControllerImp extends SignUpController {
   late TextEditingController pharmaciestNameController;
   late TextEditingController passwordController;
   late TextEditingController confirmPasswordController;
-  GlobalKey<FormState> formState = new GlobalKey<FormState>();
+  GlobalKey<FormState> formState =  GlobalKey<FormState>();
   SignUpBack signup_back = SignUpBack(Get.put(Crud()));
-  SignUpBack signUpData = new SignUpBack(Get.find());
   StatusRequest? statusRequest;
   bool isshown = true;
 
-showPassword() {
+  @override
+  showPassword() {
     isshown = !isshown;
     update();
   }
@@ -48,21 +48,23 @@ showPassword() {
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
           Get.offNamed("Login");
-        } else
+        } else {
           Get.defaultDialog(title: "", middleText: "warningbody2".tr);
+        }
       }
       update();
-    } else
+    } else {
       print("Not Valid");
+    }
   }
 
   @override
   void onInit() {
-    phoneController =  TextEditingController();
-    pharmaciestNameController =  TextEditingController();
-    pharmacyNameController =  TextEditingController();
-    passwordController =  TextEditingController();
-    confirmPasswordController =  TextEditingController();
+    phoneController = TextEditingController();
+    pharmaciestNameController = TextEditingController();
+    pharmacyNameController = TextEditingController();
+    passwordController = TextEditingController();
+    confirmPasswordController = TextEditingController();
     super.onInit();
   }
 

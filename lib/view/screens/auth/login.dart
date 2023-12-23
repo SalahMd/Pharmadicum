@@ -10,7 +10,6 @@ import 'package:pharmadicum/core/constants/dimenesions.dart';
 import 'package:pharmadicum/core/constants/images.dart';
 import 'package:pharmadicum/core/constants/textstyles.dart';
 import 'package:pharmadicum/core/functions/alerts.dart';
-import 'package:pharmadicum/core/functions/getlanguage.dart';
 
 class Login extends StatelessWidget {
   @override
@@ -37,7 +36,7 @@ class Login extends StatelessWidget {
                   Container(
                     height: Dimensions.screenHeight(context) / 3,
                     width: Dimensions.screenwidth(context),
-                    margin: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+                    margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
                     child: Image.asset(
                       Images.loginImage,
                       fit: BoxFit.fill,
@@ -45,7 +44,7 @@ class Login extends StatelessWidget {
                   ),
                   Padding(
                     padding:
-                        EdgeInsets.only(left: 15,right: 15)
+                        const EdgeInsets.only(left: 15,right: 15)
                         ,
                     child: Align(
                         alignment: controllerImp.language == "ar"
@@ -87,14 +86,14 @@ class Login extends StatelessWidget {
                     onPressed: () {
                       controllerImp.logIn();
                     },
+                    style: ButtonseApp.elevatedButtonStyle,
                     child: Text(
                       "loginbutton".tr,
                       style: TextStyles.textbuttonstyle,
                     ),
-                    style: ButtonseApp.elevatedButtonStyle,
                   ),
                   //.animate().fade(duration:1000.ms).slideY(begin: 0.8,curve: Curves.easeInOut),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Row(

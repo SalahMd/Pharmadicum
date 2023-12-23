@@ -28,7 +28,6 @@ class MedicineTypes extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
               onTap: () {
-                //int n = index + 1;
                 controller.goToMedicineType(
                    controller.categories[index]['name'], controller.categories[index]['id'].toString());
               },
@@ -38,15 +37,6 @@ class MedicineTypes extends StatelessWidget {
                   margin:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                   decoration: BoxDecoration(
-                      //color: Colors.grey.withOpacity(0.1),
-                      // boxShadow: [
-                      //   BoxShadow(
-                      //     color: Colors.grey.withOpacity(0.2),
-                      //     spreadRadius: 2,
-                      //     blurRadius: 2,
-                      //     offset: Offset(3, 3),
-                      //   ),
-                      // ],
                       border:
                           Border.all(width: 1.5, color: Colorss.primaryColor),
                       borderRadius: BorderRadius.circular(20)),

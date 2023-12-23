@@ -21,7 +21,7 @@ class SearchControllerImp extends SearchController {
   late var Language;
   Myservices myServices = Get.find();
   late TextEditingController searchController;
-  SearchBack searchBack = new SearchBack(Get.put(Crud()));
+  SearchBack searchBack = SearchBack(Get.put(Crud()));
 
   @override
   displayData() async {
@@ -68,12 +68,14 @@ class SearchControllerImp extends SearchController {
     Get.back();
   }
 
+  @override
   onInit() {
     Language = getLanguage();
-    searchController = new TextEditingController();
+    searchController = TextEditingController();
     super.onInit();
   }
 
+  @override
   void dispose() {
     searchController.dispose();
     super.dispose();

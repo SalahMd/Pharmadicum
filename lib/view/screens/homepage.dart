@@ -12,6 +12,8 @@ import 'package:pharmadicum/view/widgets/topbar.dart';
 
 class HomePage extends StatelessWidget {
   Color notFavourite = Colors.white;
+
+  HomePage({super.key});
   @override
   Widget build(BuildContext context) {
     Get.put(HomePageControllerImp(),permanent: false);

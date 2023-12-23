@@ -19,6 +19,7 @@ class TopBarControllerImp extends TopBarController {
     return isBadge;
   }
 
+  @override
   void onInit() {
     checkBaddge();
     super.onInit();

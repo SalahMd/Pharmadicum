@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:pharmadicum/core/services/services.dart';
 
 class MiddleWare extends GetMiddleware {
+  @override
   int? get priority => 1;
   Myservices myservices = Get.find();
   RouteSettings? redirect(String? route) {

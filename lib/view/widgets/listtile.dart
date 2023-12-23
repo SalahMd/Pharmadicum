@@ -5,14 +5,12 @@ import 'package:pharmadicum/core/constants/dimenesions.dart';
 class ListTiles extends StatelessWidget {
   final Icon leadingIcon;
   final Icon trailingIcon;
-  //final Function onPressed;
   final String listText;
 
   const ListTiles(
       {super.key,
       required this.leadingIcon,
       required this.trailingIcon,
-      //required this.onPressed,
       required this.listText});
   @override
   Widget build(BuildContext context) {

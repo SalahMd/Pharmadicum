@@ -21,7 +21,7 @@ class ItemControllerImp extends ItemController {
 
   StatusRequest? favouriteStatusRequest;
 
-  FavouriteBack favouriteBack = new FavouriteBack(Get.put(Crud()));
+  FavouriteBack favouriteBack = FavouriteBack(Get.put(Crud()));
 
   @override
   addToCart(Map medicine) {

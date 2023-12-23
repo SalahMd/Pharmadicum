@@ -18,7 +18,7 @@ class FavouriteControllerImp extends FavouriteController {
   StatusRequest? statusRequest;
   late var Language;
   Myservices myServices = Get.find();
-  FavouriteBack favouriteBack = new FavouriteBack(Get.put(Crud()));
+  FavouriteBack favouriteBack = FavouriteBack(Get.put(Crud()));
   List favourite = [];
   StatusRequest? favouriteStatusRequest;
   @override

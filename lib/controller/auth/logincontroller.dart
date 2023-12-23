@@ -30,11 +30,12 @@ class LogInControllerImp extends LogiInController {
   goToHomePage() {
     isLoading = true;
     update();
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Get.offAllNamed("HomePage");
     });
   }
 
+  @override
   showPassword() {
     isshown = !isshown;
     update();
@@ -84,17 +85,19 @@ class LogInControllerImp extends LogiInController {
     Get.offNamed("SignUp");
   }
 
+  @override
   void dispose() {
     phoneController.dispose();
     passwordController.dispose();
     super.dispose();
   }
 
+  @override
   void onInit() {
     language = getLanguage();
     update();
-    phoneController = new TextEditingController();
-    passwordController = new TextEditingController();
+    phoneController =  TextEditingController();
+    passwordController = TextEditingController();
     super.onInit();
   }
 }
