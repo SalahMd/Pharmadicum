@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pharmadicum/controller/cartcontroller.dart';
+import 'package:pharmadicum/controller/homepagecontroller.dart';
 import 'package:pharmadicum/core/constants/buttons.dart';
 import 'package:pharmadicum/core/constants/colors.dart';
 import 'package:pharmadicum/core/constants/dimenesions.dart';
 import 'package:pharmadicum/core/constants/textstyles.dart';
 import 'package:pharmadicum/core/functions/getlanguage.dart';
 import 'package:pharmadicum/data/datasource/static.dart';
+import 'package:pharmadicum/view/screens/homepage.dart';
 import 'package:pharmadicum/view/widgets/topbar.dart';
 
 // ignore: must_be_immutable
@@ -15,6 +17,7 @@ class Cart extends StatelessWidget {
       color: Colors.black, fontSize: 20, fontWeight: FontWeight.w400);
   @override
   Widget build(BuildContext context) {
+    var homeController = Get.put(HomePageControllerImp());
     Get.put(CartControllerImp());
     return Scaffold(
       backgroundColor: Colorss.whiteColor,
@@ -63,7 +66,7 @@ class Cart extends StatelessWidget {
                       Row(
                         children: [
                           Text("medicine".tr, style: style),
-                         const  SizedBox(width: 10),
+                          const SizedBox(width: 10),
                           Text(
                             items.length.toString(),
                             style: style,
@@ -82,8 +85,7 @@ class Cart extends StatelessWidget {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text(controller.totalPrice.toString(),
-                              style: style),
+                          Text(controller.totalPrice.toString(), style: style),
                         ],
                       ),
                       const Padding(
@@ -105,6 +107,7 @@ class Cart extends StatelessWidget {
                       ElevatedButton(
                         onPressed: () {
                           controller.sendOrder();
+                          homeController.getLanguages();
                         },
                         style: ButtonseApp.elevatedButtonStyle,
                         child: Text("confirm".tr,
@@ -116,7 +119,7 @@ class Cart extends StatelessWidget {
               : SizedBox(
                   height: 100,
                   child: Center(
-                    child: Text("noorders".tr,style: TextStyles.itembody),
+                    child: Text("noorders".tr, style: TextStyles.itembody),
                   ))
         ]),
       ),

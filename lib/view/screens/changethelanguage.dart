@@ -61,12 +61,9 @@ class ChangeTheLanguage extends GetView<ChangeLanguage> {
             GestureDetector(
               onTap: () {
                 controllerImp.medicines.clear();
-
                 controller.changeLang("en");
                 controllerImp.getLanguages();
                 Get.back();
-                // Get.off(HomePage());
-                // controllerImp.changePage(1);
               },
               child: Container(
                 height: 65,

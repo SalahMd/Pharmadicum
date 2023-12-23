@@ -65,8 +65,7 @@ class HomePageControllerImp extends HomePageController {
           return;
         }
         medicines.addAll(response['medicines']);
-      } else {
-      }
+      } else {}
     }
     update();
   }
@@ -103,7 +102,7 @@ class HomePageControllerImp extends HomePageController {
             medicinesByType[id]['image'],
             medicinesByType[id]['is_favorite'],
             id: medicinesByType[id]['id']));
-      }else {
+      } else {
         alert("notavilable".tr);
         update();
       }
@@ -161,6 +160,7 @@ class HomePageControllerImp extends HomePageController {
 
   @override
   getLanguages() {
+    medicines.clear();
     language = getLanguage();
     page = 0;
     isLoading = false;
