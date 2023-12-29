@@ -27,8 +27,7 @@ class Settings extends StatelessWidget {
                 Expanded(
                   flex: 2,
                   child: Container(
-                    //width: Dimensions.screenwidth(context),
-                    padding: EdgeInsets.all(15),
+                    padding:const EdgeInsets.all(15),
                     margin: const EdgeInsets.only(
                       bottom: 25,
                     ),
@@ -42,8 +41,8 @@ class Settings extends StatelessWidget {
                   flex: 3,
                   child: Container(
                     width: Dimensions.screenwidth(context),
-                    margin: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                    padding: EdgeInsets.all(10),
+                    margin:const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                    padding:const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15),
@@ -52,7 +51,7 @@ class Settings extends StatelessWidget {
                           color: Colors.grey.withOpacity(0.5),
                           spreadRadius: 3,
                           blurRadius: 3,
-                          offset: Offset(0, 3),
+                          offset:const Offset(0, 3),
                         ),
                       ],
                     ),
@@ -68,7 +67,7 @@ class Settings extends StatelessWidget {
                                   Icons.favorite_outline,
                                   color: Colorss.whiteColor,
                                 ),
-                                trailingIcon: Icon(Icons.arrow_forward),
+                                trailingIcon:const Icon(Icons.arrow_forward),
                                 listText: "favourite".tr),
                           ),
                           InkWell(
@@ -80,7 +79,7 @@ class Settings extends StatelessWidget {
                                   Icons.list_alt_outlined,
                                   color: Colorss.whiteColor,
                                 ),
-                                trailingIcon: Icon(Icons.arrow_forward),
+                                trailingIcon:const Icon(Icons.arrow_forward),
                                 listText: "myorders".tr),
                           ),
                          
@@ -93,7 +92,7 @@ class Settings extends StatelessWidget {
                                   Icons.translate_outlined,
                                   color: Colorss.whiteColor,
                                 ),
-                                trailingIcon: Icon(Icons.arrow_forward),
+                                trailingIcon:const Icon(Icons.arrow_forward),
                                 listText: "changelanguage".tr),
                           ),
                           InkWell(
@@ -105,14 +104,14 @@ class Settings extends StatelessWidget {
                                   Icons.logout_outlined,
                                   color: Colorss.whiteColor,
                                 ),
-                                trailingIcon: Icon(Icons.arrow_forward),
+                                trailingIcon:const Icon(Icons.arrow_forward),
                                 listText: "logout".tr),
                           ),
                         ]),
                   ),
                 ),
-                SizedBox(
-                  height: 30,
+                const SizedBox(
+                  height: 20,
                 ),
               ],
             )),

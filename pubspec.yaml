@@ -10,6 +10,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+  fl_chart: ^0.63.0
   get: ^4.6.6
   jiffy: ^6.2.1
   intl: ^0.18.1

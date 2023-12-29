@@ -15,6 +15,7 @@ import 'package:pharmadicum/view/screens/favourite.dart';
 import 'package:pharmadicum/view/screens/search.dart';
 import 'view/screens/onboarding.dart';
 
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialServices();
@@ -62,7 +63,7 @@ class MyApp extends StatelessWidget {
       )),
       debugShowCheckedModeBanner: false,
       getPages: [
-         GetPage(
+        GetPage(
             name: "/",
             page: () => ChooseLanguage(),
             middlewares: [MiddleWare()]),
@@ -73,8 +74,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/Search", page: () => Search()),
         GetPage(name: "/Favourite", page: () => Favourite()),
         GetPage(name: "/ChangeTheLanguage", page: () => ChangeTheLanguage()),
-                GetPage(name: "/ChooseLanguage", page: () => ChooseLanguage()),
-
+        GetPage(name: "/ChooseLanguage", page: () => ChooseLanguage()),
+       
       ],
     );
   }

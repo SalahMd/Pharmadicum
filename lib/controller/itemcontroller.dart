@@ -6,22 +6,27 @@ import 'package:pharmadicum/core/functions/handelingdata.dart';
 import 'package:pharmadicum/core/services/services.dart';
 import 'package:pharmadicum/data/datasource/static.dart';
 import 'package:pharmadicum/data/remote/favouriteback.dart';
+import 'package:pharmadicum/data/remote/medicine%20back.dart';
 
 abstract class ItemController extends GetxController {
   changeCount(int price, int n, bool isIncreasing);
   addToCart(Map medicine);
   addToFavorite(int id);
+  displayMedicine(int id);
 }
 
 class ItemControllerImp extends ItemController {
+  final int id;
+  ItemControllerImp(this.id);
   int count = 0;
   int sum = 0;
   bool isFavourite = false;
   Myservices myServices = Get.find();
-
+  StatusRequest? statusRequest;
   StatusRequest? favouriteStatusRequest;
-
   FavouriteBack favouriteBack = FavouriteBack(Get.put(Crud()));
+  MedicineBack medicineBack = MedicineBack(Get.put(Crud()));
+  Map info = {};
 
   @override
   addToCart(Map medicine) {
@@ -60,10 +65,6 @@ class ItemControllerImp extends ItemController {
     update();
   }
 
-  void onInit() {
-    super.onInit();
-  }
-
   @override
   addToFavorite(int id) async {
     var token = myServices.sharedPreferences.getString("token");
@@ -71,11 +72,32 @@ class ItemControllerImp extends ItemController {
     favouriteStatusRequest = hadelingData(response);
     if (StatusRequest.success == favouriteStatusRequest) {
       if (response['status'] == "success") {
-        print("success");
       } else {
         print("error");
       }
     }
     update();
+  }
+
+  @override
+  void displayMedicine(int id) async {
+    statusRequest = StatusRequest.loading;
+    var token = myServices.sharedPreferences.getString("token");
+    var language = myServices.sharedPreferences.getString("lang");
+    var response = await medicineBack.postMedicineData(token, language, id);
+    statusRequest = hadelingData(response);
+    if (StatusRequest.success == statusRequest) {
+      if (response['status'] == "success") {
+        info.addAll(response['medicine']);
+        print(info);
+      } else {}
+    }
+    update();
+  }
+
+  @override
+  void onInit() {
+     displayMedicine(id);
+    super.onInit();
   }
 }

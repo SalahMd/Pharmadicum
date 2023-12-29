@@ -94,7 +94,7 @@ class Translation extends Translations {
           "added": "تم إضافة العنصر",
           "order":"طلب: ",
           "price2":"السعر: ",
-          "notavilable":"هذا الدواء غير موجود حاليا"
+          "notavilable":"هذا الدواء غير موجود حاليا",
         },
         "en": {
           "title1": "Choose Medicine Or Store",
@@ -187,7 +187,8 @@ class Translation extends Translations {
           "added": "The medicine is added",
           "order":"Order: ",
           "price2":"Price: ",
-          "notavilable":"This medicine is not existed currently"
+          "notavilable":"This medicine is not existed currently",
+
         }
       };
 }

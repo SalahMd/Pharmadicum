@@ -42,15 +42,6 @@ class FavouriteControllerImp extends FavouriteController {
   goToItemInfo(int id) {
     if(favourite[id]['amount'] != 0){
     Get.to(ItemInfo(
-      favourite[id]['economic_name'],
-      favourite[id]['scientific_name'],
-      favourite[id]['category']['name'],
-      favourite[id]['company']['name'],
-      favourite[id]['amount'],
-      favourite[id]['batches'][0]['expiration_date'],
-      favourite[id]['unit_price'],
-      favourite[id]['image'],
-      true,
       id:favourite[id]['id'],
     ));
     }else{

@@ -46,15 +46,6 @@ class SearchControllerImp extends SearchController {
   goToItemInfo(int id) {
     if (data[id]['amount'] != 0) {
       Get.to(ItemInfo(
-        data[id]['economic_name'],
-        data[id]['scientific_name'],
-        data[id]['category']['name'],
-        data[id]['company']['name'],
-        data[id]['amount'].toString(),
-        data[id]['batches'][0]['expiration_date'],
-        data[id]['unit_price'],
-        data[id]['image'],
-        data[id]['is_favorite'],
         id: data[id]['id'],
       ));
     }else {

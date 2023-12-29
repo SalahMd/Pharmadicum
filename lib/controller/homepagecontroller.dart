@@ -75,15 +75,6 @@ class HomePageControllerImp extends HomePageController {
     if (!isByCategory) {
       if (medicines[id]['amount'] != 0) {
         Get.to(ItemInfo(
-            medicines[id]['economic_name'],
-            medicines[id]['scientific_name'],
-            medicines[id]['category']['name'],
-            medicines[id]['company']['name'],
-            medicines[id]['amount'],
-            medicines[id]['batches'][0]['expiration_date'],
-            medicines[id]['unit_price'],
-            medicines[id]['image'],
-            medicines[id]['is_favorite'],
             id: medicines[id]['id']));
       } else {
         alert("notavilable".tr);
@@ -92,15 +83,6 @@ class HomePageControllerImp extends HomePageController {
     } else {
       if (medicinesByType[id]['amount'] != 0) {
         Get.to(ItemInfo(
-            medicinesByType[id]['economic_name'],
-            medicinesByType[id]['scientific_name'],
-            medicinesByType[id]['category']['name'],
-            medicinesByType[id]['company']['name'],
-            medicinesByType[id]['amount'],
-            medicinesByType[id]['batches'][0]['expiration_date'],
-            medicinesByType[id]['unit_price'],
-            medicinesByType[id]['image'],
-            medicinesByType[id]['is_favorite'],
             id: medicinesByType[id]['id']));
       } else {
         alert("notavilable".tr);
