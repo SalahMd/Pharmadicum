@@ -46,6 +46,7 @@ class SearchControllerImp extends SearchController {
   goToItemInfo(int id) {
     if (data[id]['amount'] != 0) {
       Get.to(ItemInfo(
+        image: data[id]['image'],
         id: data[id]['id'],
       ));
     }else {

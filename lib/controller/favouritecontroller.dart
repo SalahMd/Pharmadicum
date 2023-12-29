@@ -42,6 +42,7 @@ class FavouriteControllerImp extends FavouriteController {
   goToItemInfo(int id) {
     if(favourite[id]['amount'] != 0){
     Get.to(ItemInfo(
+      image: favourite[id]['image'],
       id:favourite[id]['id'],
     ));
     }else{

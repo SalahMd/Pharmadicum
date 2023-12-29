@@ -75,6 +75,7 @@ class HomePageControllerImp extends HomePageController {
     if (!isByCategory) {
       if (medicines[id]['amount'] != 0) {
         Get.to(ItemInfo(
+           image: medicines[id]['image'],
             id: medicines[id]['id']));
       } else {
         alert("notavilable".tr);
@@ -83,6 +84,7 @@ class HomePageControllerImp extends HomePageController {
     } else {
       if (medicinesByType[id]['amount'] != 0) {
         Get.to(ItemInfo(
+          image: medicinesByType[id]['image'],
             id: medicinesByType[id]['id']));
       } else {
         alert("notavilable".tr);

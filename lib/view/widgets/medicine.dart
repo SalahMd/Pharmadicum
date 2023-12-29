@@ -48,9 +48,12 @@ class Medicine extends StatelessWidget {
       child: Row(children: [
         Expanded(
             flex: 2,
-            child: Image.memory(
-              tranImage(),
-              fit: BoxFit.fill,
+            child: Hero(
+              tag: id,
+              child: Image.memory(
+                tranImage(),
+                fit: BoxFit.fill,
+              ),
             )
             ),
         const Padding(padding: EdgeInsets.only(left: 5)),

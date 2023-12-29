@@ -16,7 +16,6 @@ class Cart extends StatelessWidget {
       color: Colors.black, fontSize: 20, fontWeight: FontWeight.w400);
   @override
   Widget build(BuildContext context) {
-    var homeController = Get.put(HomePageControllerImp());
     Get.put(CartControllerImp());
     return Scaffold(
       backgroundColor: Colorss.whiteColor,
@@ -106,7 +105,7 @@ class Cart extends StatelessWidget {
                       ElevatedButton(
                         onPressed: () {
                           controller.sendOrder();
-                          homeController.getLanguages();
+                         
                         },
                         style: ButtonseApp.elevatedButtonStyle,
                         child: Text("confirm".tr,

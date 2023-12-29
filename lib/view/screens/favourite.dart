@@ -13,7 +13,6 @@ class Favourite extends StatelessWidget {
   Widget build(BuildContext context) {
       Get.put(FavouriteControllerImp(),permanent: false);
     return GetBuilder<FavouriteControllerImp>(
-    
       builder: (controller) => Scaffold(
         backgroundColor: Colorss.whiteColor,
         body: 
