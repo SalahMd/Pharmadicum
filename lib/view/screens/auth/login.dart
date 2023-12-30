@@ -34,8 +34,8 @@ class Login extends StatelessWidget {
                   ),
               
                   Container(
-                    height: Dimensions.screenHeight(context) / 3,
-                    width: Dimensions.screenwidth(context),
+                    height: Dimensions.screenHeight(context) / 3.2,
+                    width: Dimensions.screenwidth(context)/1.7,
                     margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
                     child: Image.asset(
                       Images.loginImage,

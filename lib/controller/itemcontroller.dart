@@ -36,13 +36,12 @@ class ItemControllerImp extends ItemController {
             medicine['medicine_id'].toString()) {
           items.add(medicine);
           alert("added".tr);
-
           update();
-
           break;
         } else {
           alert("alreadyexist".tr);
           update();
+          return;
         }
       }
     } else {
@@ -89,7 +88,6 @@ class ItemControllerImp extends ItemController {
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
         info.addAll(response['medicine']);
-        print(info);
       } else {}
     }
     update();
@@ -97,7 +95,7 @@ class ItemControllerImp extends ItemController {
 
   @override
   void onInit() {
-     displayMedicine(id);
+    displayMedicine(id);
     super.onInit();
   }
 }

@@ -10,7 +10,6 @@ import 'package:pharmadicum/core/constants/dimenesions.dart';
 import 'package:pharmadicum/core/constants/images.dart';
 import 'package:pharmadicum/core/constants/textstyles.dart';
 import 'package:pharmadicum/core/functions/alerts.dart';
-import 'package:pharmadicum/view/widgets/loading.dart';
 
 class ItemInfo extends StatelessWidget {
   final int id;

@@ -1,7 +1,7 @@
 class Images {
   static String englishimage = "images/english.png";
   static String arabicimage = "images/arabic.png";
-  static String loginImage = "images/login.png";
+  static String loginImage = "images/logo3.png";
   static String signUpImage = "images/signup.png";
   static String tabletimage = "images/tablets.png";
   static String ampulesImage = "images/ampules.png";
