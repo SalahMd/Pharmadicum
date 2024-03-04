@@ -30,18 +30,18 @@ class ItemControllerImp extends ItemController {
 
   @override
   addToCart(Map medicine) {
+    print(medicine);
     if (items.isNotEmpty) {
       for (int i = 0; i < items.length; i++) {
-        if (items[i]['medicine_id'].toString() !=
-            medicine['medicine_id'].toString()) {
+        if (items[i]['medicine_id'] == medicine['medicine_id']) {
+          alert("alreadyexist".tr);
+          update();
+          break;
+        } else if(items[i]['medicine_id'] != medicine['medicine_id']&&i==items.length-1){
           items.add(medicine);
           alert("added".tr);
           update();
           break;
-        } else {
-          alert("alreadyexist".tr);
-          update();
-          return;
         }
       }
     } else {

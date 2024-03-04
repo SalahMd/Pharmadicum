@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
   HomePage({super.key});
   @override
   Widget build(BuildContext context) {
-    Get.put(HomePageControllerImp(),permanent: false);
+    Get.put(HomePageControllerImp(), permanent: false);
     return WillPopScope(
       onWillPop: exitAlert,
       child: GetBuilder<HomePageControllerImp>(
@@ -74,55 +74,48 @@ class HomePage extends StatelessWidget {
                                 style: Theme.of(context).textTheme.headline1,
                               )),
                         ),
-                        SizedBox(
-                          height:
-                          // controllerImp.isLoading
-                            //  ? (controllerImp.medicines.length + 1) * 97
-                              //:
-                               controllerImp.medicines.length * 97,
-                          child: ListView.builder(
-                              padding: const EdgeInsets.only(top: 15),
-                              physics: const NeverScrollableScrollPhysics(),
-                              itemCount: controllerImp.isLoading
-                                  ? controllerImp.medicines.length + 1
-                                  : controllerImp.medicines.length,
-                              itemBuilder: (BuildContext, int index) {
-                                if (index < controllerImp.medicines.length) {
-                                  return GestureDetector(
-                                      onTap: () {
-                                        controllerImp.goToItemInfo(
-                                            index, false);
-                                      },
-                                      child: Medicine(
-                                        id:controllerImp.medicines[index]
-                                            ['id'],
-                                        name: controllerImp.medicines[index]
-                                            ['economic_name'],
-                                        image: controllerImp.medicines[index]
-                                            ['image'],
-                                        composition:
-                                            controllerImp.medicines[index]
-                                                ['scientific_name'],
-                                        category: controllerImp.medicines[index]
-                                            ['category']['name'],
-                                        price: controllerImp.medicines[index]
-                                                ['unit_price']
-                                            .toString(),
-                                        isFavourite:
-                                            controllerImp.medicines[index]
-                                                        ['is_favorite'],
-                                        isHomePage: true,
-                                      ));
-                                } 
-                                // else {
-                                //   return Center(
-                                //     child: CircularProgressIndicator(
-                                //       color: Colorss.primaryColor,
-                                //     ),
-                                //   );
-                                // }
-                              }),
-                        ),
+                        ListView.builder(
+                          shrinkWrap:true,
+                            padding: const EdgeInsets.only(top: 15),
+                            physics: const NeverScrollableScrollPhysics(),
+                            itemCount: controllerImp.isLoading
+                                ? controllerImp.medicines.length + 1
+                                : controllerImp.medicines.length,
+                            itemBuilder: (BuildContext, int index) {
+                              if (index < controllerImp.medicines.length) {
+                                return GestureDetector(
+                                    onTap: () {
+                                      controllerImp.goToItemInfo(
+                                          index, false);
+                                    },
+                                    child: Medicine(
+                                      id: controllerImp.medicines[index]
+                                          ['id'],
+                                      name: controllerImp.medicines[index]
+                                          ['economic_name'],
+                                      image: controllerImp.medicines[index]
+                                          ['image'],
+                                      composition:
+                                          controllerImp.medicines[index]
+                                              ['scientific_name'],
+                                      category: controllerImp.medicines[index]
+                                          ['category']['name'],
+                                      price: controllerImp.medicines[index]
+                                              ['unit_price']
+                                          .toString(),
+                                      isFavourite: controllerImp
+                                          .medicines[index]['is_favorite'],
+                                      isHomePage: true,
+                                    ));
+                              }
+                              // else {
+                              //   return Center(
+                              //     child: CircularProgressIndicator(
+                              //       color: Colorss.primaryColor,
+                              //     ),
+                              //   );
+                              // }
+                            }),
                       ]),
                 ),
         ),

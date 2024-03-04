@@ -84,91 +84,88 @@ class CartInfo extends StatelessWidget {
                         ))
                   ]),
                 ),
-                Container(
-                  // color: Colors.redAccent,
-                  height: (items.length * 65).toDouble(),
-                  child: ListView.builder(
-                    padding: EdgeInsets.only(bottom: 2),
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: items.length,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        width: Dimensions.screenwidth(context),
-                        height: 65,
-                        padding: EdgeInsets.all(5),
-                        // margin: EdgeInsets.symmetric(vertical: 10),
-                        decoration: BoxDecoration(
-                            border:
-                                Border.all(color: Colorss.tableColor, width: 1),
-                            borderRadius: BorderRadius.circular(1)),
-                        child: Row(children: [
-                          Expanded(
-                            flex: 3,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                   items[index]['name'],
-                                  style: TextStyles.medicineNameStyle,
-                                ),
-                                Text(
-                                   items[index]['composition_name'],
-                                  style: TextStyles.medicineCompositionStyle,
-                                ),
-                              ],
-                            ),
+                ListView.builder(
+                  shrinkWrap:true,
+                  padding: EdgeInsets.only(bottom: 2),
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: items.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      width: Dimensions.screenwidth(context),
+                      height: 65,
+                      padding: EdgeInsets.all(5),
+                      // margin: EdgeInsets.symmetric(vertical: 10),
+                      decoration: BoxDecoration(
+                          border:
+                              Border.all(color: Colorss.tableColor, width: 1),
+                          borderRadius: BorderRadius.circular(1)),
+                      child: Row(children: [
+                        Expanded(
+                          flex: 3,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                 items[index]['name'],
+                                style: TextStyles.medicineNameStyle,
+                              ),
+                              Text(
+                                 items[index]['composition_name'],
+                                style: TextStyles.medicineCompositionStyle,
+                              ),
+                            ],
                           ),
-                          VerticalDivider(
-                            thickness: 1,
-                            color: Colorss.tableColor,
-                          ),
-                          Expanded(
-                              flex: 2,
-                              child: Text(
-                                items[index]['category'],
+                        ),
+                        VerticalDivider(
+                          thickness: 1,
+                          color: Colorss.tableColor,
+                        ),
+                        Expanded(
+                            flex: 2,
+                            child: Text(
+                              items[index]['category'],
+                              textAlign: TextAlign.center,
+                              style: TextStyles.medicineInfobody,
+                            )),
+                        VerticalDivider(
+                          thickness: 1,
+                          color: Colorss.tableColor,
+                        ),
+                        Expanded(
+                            flex: 1,
+                            child: Text(
+                              items[index]['amount'].toString(),
+                              textAlign: TextAlign.center,
+                              style: TextStyles.medicineInfobody,
+                            )),
+                        VerticalDivider(
+                          thickness: 1,
+                          color: Colorss.tableColor,
+                        ),
+                        Expanded(
+                            flex: 2,
+                            child: Text(items[index]['total_price'],
                                 textAlign: TextAlign.center,
-                                style: TextStyles.medicineInfobody,
-                              )),
-                          VerticalDivider(
-                            thickness: 1,
-                            color: Colorss.tableColor,
-                          ),
-                          Expanded(
-                              flex: 1,
-                              child: Text(
-                                items[index]['amount'].toString(),
-                                textAlign: TextAlign.center,
-                                style: TextStyles.medicineInfobody,
-                              )),
-                          VerticalDivider(
-                            thickness: 1,
-                            color: Colorss.tableColor,
-                          ),
-                          Expanded(
-                              flex: 2,
-                              child: Text(items[index]['total_price'],
-                                  textAlign: TextAlign.center,
-                                  style: TextStyles.medicineInfobody)),
-                          VerticalDivider(
-                            thickness: 1,
-                            color: Colorss.tableColor,
-                          ),
-                          Expanded(
-                              flex: 1,
-                              child: IconButton(
-                                icon: Icon(
-                                  Icons.restore_from_trash,
-                                  color: Colors.red[500],
-                                  size: 22,
-                                ),
-                                onPressed: () {
-                                  controller.deleteItem(index);
-                                },
-                              ))
-                        ]),
-                      );
-                    },
-                  ),
+                                style: TextStyles.medicineInfobody)),
+                        VerticalDivider(
+                          thickness: 1,
+                          color: Colorss.tableColor,
+                        ),
+                        Expanded(
+                            flex: 1,
+                            child: IconButton(
+                              icon: Icon(
+                                Icons.restore_from_trash,
+                                color: Colors.red[500],
+                                size: 22,
+                              ),
+                              onPressed: () {
+                                controller.deleteItem(index);
+                              },
+                            ))
+                      ]),
+                    );
+                  },
                 ),
               ],
             )

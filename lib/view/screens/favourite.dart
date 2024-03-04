@@ -23,31 +23,29 @@ class Favourite extends StatelessWidget {
                 isHomePage: false,
                 title: "favourite".tr,
                 height: Dimensions.fontSizee(context, 10)),
-            SizedBox(
-              height: controller.favourite.length * 125,
-              child: ListView.builder(
-                itemCount: controller.favourite.length,
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                      onTap: () {
-                        // controllerImp.goToItemInfo(index);
-                        controller.goToItemInfo(index);
-                        
-                       },
-                      child: Medicine(
-                        id: controller.favourite[index]['id'],
-                        image:  controller.favourite[index]['image'],
-                        name: controller.favourite[index]['economic_name'],
-                        composition: controller.favourite[index]['scientific_name'],
-                        category: controller.favourite[index]['category']
-                                ['name'],
-                        price: controller.favourite[index]['unit_price']
-                            .toString(),
-                            isHomePage: false,
-                            isFavourite:controller.favourite[index]['is_favorite'] ,
-                      ));
-                },
-              ),
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: controller.favourite.length,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                    onTap: () {
+                      // controllerImp.goToItemInfo(index);
+                      controller.goToItemInfo(index);
+                      
+                     },
+                    child: Medicine(
+                      id: controller.favourite[index]['id'],
+                      image:  controller.favourite[index]['image'],
+                      name: controller.favourite[index]['economic_name'],
+                      composition: controller.favourite[index]['scientific_name'],
+                      category: controller.favourite[index]['category']
+                              ['name'],
+                      price: controller.favourite[index]['unit_price']
+                          .toString(),
+                          isHomePage: false,
+                          isFavourite:controller.favourite[index]['is_favorite'] ,
+                    ));
+              },
             )
           ]),
         ),

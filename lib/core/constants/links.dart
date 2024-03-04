@@ -1,8 +1,7 @@
 class Links {
-  static String IP = "http://192.168.1.104:8000";
+  static String IP = "http://192.168.1.101:8000";
   static String logIn = "$IP""/api/login";
   static String signUp = "$IP""/api/register";
-  //static String logOut = "http://192.168.1.104:8000/api/logout";
   static String logOut = "$IP""/api/logout";
   static String cart = "$IP""/api/order";
   static String order = "$IP""/api/order";

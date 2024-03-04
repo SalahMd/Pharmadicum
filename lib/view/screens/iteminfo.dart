@@ -201,7 +201,7 @@ class ItemInfo extends StatelessWidget {
                                       style: TextStyles.medicineInfoStyle,
                                     ),
                                     subtitle: Text(
-                                      "",
+                                      "2025-5-10",
                                       style: TextStyles.medicineInfobody,
                                     ),
                                     leading: Icon(
@@ -263,7 +263,7 @@ class ItemInfo extends StatelessWidget {
                                           onPressed: () {
                                             if (controllerImp.count != 0) {
                                               controllerImp.addToCart({
-                                                "medicine_id": id.toString(),
+                                                "medicine_id": id,
                                                 "amount": controllerImp.count
                                                     .toString(),
                                                 "unit_price": controller

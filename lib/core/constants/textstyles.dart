@@ -34,7 +34,7 @@ class TextStyles {
       fontWeight: FontWeight.bold);
   static TextStyle medicineInfobody = TextStyle(
       color: Colors.black54,
-      fontSize: 15,
+      fontSize: 14,
       fontWeight: FontWeight.w400);
   static TextStyle priceStyle =
       TextStyle(color: Colors.green, fontSize: 21, fontWeight: FontWeight.w400);
